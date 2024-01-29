@@ -6,8 +6,8 @@ import java.sql.DriverManager;
 public class bdd {
 
     private static Connection maConnexion;
-    private static String driver = "com.mysql.jdbc.Driver";
-    private static String url = "jdbc:mysql://localhost/todolist_fx";
+    private static String driver = "com.mysql.cj.jdbc.Driver";
+    private static String url = "jdbc:mysql://localhost/java_mkn_lprs";
     private static String mySqlUser = "root";
     private static String mysqlPassword = "";
 

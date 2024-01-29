@@ -12,6 +12,7 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        maStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("MKN_LPRS");
@@ -31,6 +32,20 @@ public class HelloApplication extends Application {
             e.printStackTrace();
         }
 
+    }
+    public static void sceneConnexion(String fxml, Object controlleur) {
+        maStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml + ".fxml"));
+        fxmlLoader.setController(controlleur);
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load());
+            maStage.setTitle("ToDoList-Apps");
+            maStage.setScene(scene);
+            maStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     public static void newStage(String fxml, Object controller) {
         Stage window = new Stage();
