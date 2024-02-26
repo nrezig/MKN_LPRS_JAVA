@@ -1,16 +1,32 @@
 package com.example.java_mkn_lprs.modele;
 
-import javafx.scene.control.Alert;
-
 public class FicheEtudiant {
-
+    private int idFicheEtudiant;
     private String nom;
     private String prenom;
-    private String dernier_diplome;
+    private String dernierDiplome;
     private String email;
     private String telephone;
     private String adresse;
-    private static int id_ficheetudiant;
+
+    public FicheEtudiant(int idFicheEtudiant, String nom, String prenom, String dernierDiplome) {
+        this.idFicheEtudiant = idFicheEtudiant;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dernierDiplome = dernierDiplome;
+        this.email = email;
+        this.telephone = telephone;
+        this.adresse = adresse;
+    }
+
+    public int getIdFicheEtudiant() {
+        return idFicheEtudiant;
+    }
+
+    public void setIdFicheEtudiant(int idFicheEtudiant) {
+        this.idFicheEtudiant = idFicheEtudiant;
+    }
+
     public String getNom() {
         return nom;
     }
@@ -19,24 +35,28 @@ public class FicheEtudiant {
         this.nom = nom;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPrenom() {
+        return prenom;
     }
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getDernierDiplome() {
+        return dernierDiplome;
     }
 
-    public String getDernier_diplome() {
-        return dernier_diplome;
+    public void setDernierDiplome(String dernierDiplome) {
+        this.dernierDiplome = dernierDiplome;
     }
 
-    public void setDernier_diplome(String dernier_diplome) {
-        this.dernier_diplome = dernier_diplome;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getTelephone() {
@@ -54,36 +74,4 @@ public class FicheEtudiant {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
-
-    public void setEmail(String email) {
-
-        String regex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
-        if (email.matches(regex)) {
-            this.email = email;
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERREUR !");
-            alert.setContentText("ADRESSE MAIL NON COMFORME !");
-            alert.showAndWait();
-
-        }
-    }
-    public static int getId() {
-        return id_ficheetudiant;
-    }
-
-    public static void setId(int id) {
-        FicheEtudiant.id_ficheetudiant = id;
-    }
-
-    public FicheEtudiant (int id, String nom, String prenom, String email, String telephone, String adresse){
-        this.id_ficheetudiant = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.email = email;
-        this.telephone = telephone;
-        this.adresse = adresse;
-    }
-
-
 }

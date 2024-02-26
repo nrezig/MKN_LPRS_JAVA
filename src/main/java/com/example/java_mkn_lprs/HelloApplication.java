@@ -1,5 +1,6 @@
 package com.example.java_mkn_lprs;
 
+import com.example.java_mkn_lprs.modele.DossierInscription;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,6 +10,9 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
     private static Stage maStage;
+
+
+
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -33,20 +37,7 @@ public class HelloApplication extends Application {
         }
 
     }
-    public static void sceneConnexion(String fxml, Object controlleur) {
-        maStage.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml + ".fxml"));
-        fxmlLoader.setController(controlleur);
-        Scene scene = null;
-        try {
-            scene = new Scene(fxmlLoader.load());
-            maStage.setTitle("ToDoList-Apps");
-            maStage.setScene(scene);
-            maStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
     public static void newStage(String fxml, Object controller) {
         Stage window = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml+".fxml"));
@@ -61,6 +52,34 @@ public class HelloApplication extends Application {
         window.setScene(scene);
         window.showAndWait();
     }
+
+
+
+    public static void redirectToViewDossiers() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/java_mkn_lprs/ViewDossiers.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            maStage.setTitle("Dossiers d'Inscription");
+            maStage.setScene(scene);
+            maStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void redirectToViewDossiersDetail(DossierInscription dossierSelectionne) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/java_mkn_lprs/prof.ViewDossiersDetail.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            maStage.setTitle("Détails dossiers d'inscription");
+            maStage.setScene(scene);
+            maStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     public static void main(String[] args) {
         launch();
