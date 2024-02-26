@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.java_mkn_lprs.appli.ProfesseurController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.java_mkn_lprs.appli.ProfesseurController">
    <children>
-      <Label layoutX="197.0" layoutY="39.0" prefHeight="44.0" prefWidth="182.0" text="Prof_acceuil" />
+      <Text layoutX="193.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interface Professeur" underline="true" wrappingWidth="214.15740966796875">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="id_button_prof_menu" layoutX="193.0" layoutY="104.0" mnemonicParsing="false" onAction="#ask_fourniture" prefHeight="58.0" prefWidth="214.0" text="Demande de Fourniture">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="id_button_prof_menu1" layoutX="186.0" layoutY="182.0" mnemonicParsing="false" onAction="#show_fourniture" prefHeight="58.0" prefWidth="227.0" text="Consulter les Demandes">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="id_button_fichefourniture" layoutX="181.0" layoutY="273.0" mnemonicParsing="false" onAction="#create_fichefourniture" prefHeight="58.0" prefWidth="237.0" text="Créer une fiche fourniture">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
