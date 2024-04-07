@@ -12,36 +12,28 @@ import java.sql.ResultSet;
 public class UtilisateurController {
     public Utilisateur connexion (String email, String mdp ) throws Exception {
         Connection maConnexion = bdd.getConnection();
-        Utilisateur unUser = new Utilisateur();
-
-
-        PreparedStatement login = maConnexion.prepareStatement("SELECT * FROM users WHERE email = ? AND password = ?;");
+        PreparedStatement login = maConnexion.prepareStatement("SELECT * FROM users  WHERE email = ? AND password = ?;");
         login.setString(1, email);
         login.setString(2, mdp);
         ResultSet result = login.executeQuery();
 
         if (result.next()){
-            unUser.setNom(result.getString("nom"));
-            unUser.setPrenom(result.getString("prenom"));
-            Utilisateur.setId(result.getInt("id"));
-            unUser.setEmail(result.getString("email"));
-            unUser.setProfil(result.getString("profil"));
-
+            Utilisateur unUser = new Utilisateur(result.getInt("id"), result.getString("nom"), result.getString("prenom"),result.getString("email"), result.getString("password"), result.getString("profil"));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Succés !");
             alert.setContentText("Connexion réussie !");
             alert.showAndWait();
-            if(result.getString("profil").equals("Admin")){
+            if(result.getString("profil").equals("Administrateur")){
                 HelloApplication.sceneConnexion("Admin_acceuil");
             }
-            else if (result.getString("profil").equals("professeur")){
+            else if (result.getString("profil").equals("Professeur")){
                 HelloApplication.sceneConnexion("Prof_acceuil");
             }
-            else if (result.getString("profil").equals("secretaire")) {
+            else if (result.getString("profil").equals("Secretaire")) {
                 HelloApplication.sceneConnexion("Secretaire_acceuil");
             }
-            else if (result.getString("profil").equals("gestionnaireStock")) {
+            else if (result.getString("profil").equals("Gestionnaire de stock")) {
                 HelloApplication.sceneConnexion("GS_acceuil");
             }
 

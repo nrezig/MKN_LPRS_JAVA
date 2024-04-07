@@ -37,7 +37,6 @@
     </Button>
     <PasswordField fx:id="mdp" layoutX="15.0" layoutY="202.0" prefHeight="29.0" prefWidth="258.0" />
     <Button fx:id="retour" layoutX="10.0" layoutY="18.0" mnemonicParsing="false" onAction="#retour" prefHeight="25.0" prefWidth="31.0">
-        <graphic>
-        </graphic></Button>
+        </Button>
 </children>
 </AnchorPane>

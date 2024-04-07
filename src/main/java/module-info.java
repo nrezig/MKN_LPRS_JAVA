@@ -6,4 +6,6 @@ module com.example.java_mkn_lprs {
     exports com.example.java_mkn_lprs;
     exports com.example.java_mkn_lprs.appli;
     opens com.example.java_mkn_lprs.appli to javafx.fxml;
+    opens com.example.java_mkn_lprs.modele to javafx.base;
+
 }

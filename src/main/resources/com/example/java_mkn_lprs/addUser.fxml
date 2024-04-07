@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="emailNewUser" prefHeight="620.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.java_mkn_lprs.appli.AddUserController">
+   <children>
+      <Label alignment="CENTER" layoutX="189.0" layoutY="31.0" prefHeight="36.0" prefWidth="222.0" text="Nouvel Utilisateur ">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="226.0" layoutY="101.0" prefHeight="28.0" prefWidth="148.0" text="Nom ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nomNewUser" layoutX="174.0" layoutY="144.0" prefHeight="31.0" prefWidth="253.0" />
+      <Label alignment="CENTER" layoutX="221.0" layoutY="189.0" prefHeight="31.0" prefWidth="148.0" text="Prénom">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="prenomNewUser" layoutX="174.0" layoutY="228.0" prefHeight="31.0" prefWidth="253.0" />
+      <Label alignment="CENTER" layoutX="221.0" layoutY="271.0" prefHeight="31.0" prefWidth="148.0" text="Email">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="EmailNewUser" layoutX="174.0" layoutY="312.0" prefHeight="31.0" prefWidth="253.0" />
+      <Label alignment="CENTER" layoutX="226.0" layoutY="357.0" prefHeight="31.0" prefWidth="148.0" text="Mot de passe">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="MdpNewUser" layoutX="174.0" layoutY="394.0" prefHeight="31.0" prefWidth="253.0" />
+      <Button layoutX="245.0" layoutY="542.0" mnemonicParsing="false" onAction="#AddUser" prefHeight="31.0" prefWidth="100.0" text="Valider">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="Profil" layoutX="216.0" layoutY="460.0" onAction="#showProfil" prefHeight="36.0" prefWidth="158.0" promptText="Profil" />
+
+       
+   </children>
+</AnchorPane>
