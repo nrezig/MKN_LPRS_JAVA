@@ -4,18 +4,38 @@ import java.sql.Time;
 import java.util.Date;
 
 public class DossierInscription {
-    private int id_dossier;
+    private int idDossier;
     private Date date;
     private Time heure;
-    private String  filiere;
+    private String filiere;
     private String motivation;
 
-    public int getId_dossier() {
-        return id_dossier;
+    private FicheEtudiant ficheEtudiant;
+
+
+    public DossierInscription(int idDossier, Date date, Time heure, String filiere, String motivation) {
+        this.idDossier = idDossier;
+        this.date = date;
+        this.heure = heure;
+        this.filiere = filiere;
+        this.motivation = motivation;
     }
 
-    public void setId_dossier(int id_dossier) {
-        this.id_dossier = id_dossier;
+    public DossierInscription(FicheEtudiant ficheEtudiant) {
+        this.ficheEtudiant = ficheEtudiant;
+    }
+
+
+
+    public DossierInscription(String nom, String prenom, String filiere, String dernierDiplome) {
+    }
+
+    public int getIdDossier() {
+        return idDossier;
+    }
+
+    public void setIdDossier(int idDossier) {
+        this.idDossier = idDossier;
     }
 
     public Date getDate() {
@@ -49,11 +69,25 @@ public class DossierInscription {
     public void setMotivation(String motivation) {
         this.motivation = motivation;
     }
-    public DossierInscription (int id_dossier, Date date, Time heure, String filiere, String motivation){
-        this.id_dossier = id_dossier;
-        this.date = date;
-        this.heure = heure;
-        this.filiere = filiere;
-        this.motivation = motivation;
+
+    public FicheEtudiant getFicheEtudiant() {
+        return ficheEtudiant;
     }
+
+    public void setFicheEtudiant(FicheEtudiant ficheEtudiant) {
+        this.ficheEtudiant = ficheEtudiant;
+    }
+
+    public String getNom() {
+        return this.ficheEtudiant.getNom();
+    }
+
+    public String getPrenom() {
+        return this.ficheEtudiant.getPrenom();
+    }
+
+    public String getDernierDiplome() {
+        return this.ficheEtudiant.getDernierDiplome();
+    }
+
 }

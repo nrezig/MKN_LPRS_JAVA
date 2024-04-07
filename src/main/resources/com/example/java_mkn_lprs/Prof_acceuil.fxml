@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.java_mkn_lprs.appli.ProfesseurController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFBA08;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.java_mkn_lprs.appli.ProfesseurController">
    <children>
-      <Text layoutX="193.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interface Professeur" underline="true" wrappingWidth="214.15740966796875">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Button fx:id="id_button_prof_menu" layoutX="193.0" layoutY="104.0" mnemonicParsing="false" onAction="#ask_fourniture" prefHeight="58.0" prefWidth="214.0" text="Demande de Fourniture">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="id_button_prof_menu1" layoutX="186.0" layoutY="182.0" mnemonicParsing="false" onAction="#show_fourniture" prefHeight="58.0" prefWidth="227.0" text="Consulter les Demandes">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="id_button_fichefourniture" layoutX="181.0" layoutY="273.0" mnemonicParsing="false" onAction="#create_fichefourniture" prefHeight="58.0" prefWidth="237.0" text="Créer une fiche fourniture">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
+      <VBox fx:id="sidebar" alignment="TOP_CENTER" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #3F88C5; -fx-background-radius: 0 30 30 0; -fx-padding: 20;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="labelBienvenue" style="-fx-text-fill: white; -fx-font-size: 24px;" text="MKN LPRS" />
+            <Separator style="-fx-background-color: white;" />
+            <Button fx:id="id_button_prof_menu" onAction="#ask_fourniture" style="-fx-background-color: #3F88C5; -fx-text-fill: white; -fx-background-radius: 0;" text="Demande de Fourniture" />
+            <Button fx:id="id_button_prof_menu1" onAction="#show_fourniture" style="-fx-background-color: #3F88C5; -fx-text-fill: white; -fx-background-radius: 0;" text="Consulter ses demandes" />
+            <Button fx:id="id_button_fichefourniture" onAction="#create_fichefourniture" style="-fx-background-color: #3F88C5; -fx-text-fill: white; -fx-background-radius: 0;" text="Créer une fiche fourniture" />
+         </children>
+      </VBox>
+      <VBox fx:id="contentArea" style="-fx-background-color: white; -fx-padding: 20;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Interface Professeur" underline="true">
+               <font>
+                  <Font name="Arial Black" size="31.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="100.0" />
+               </VBox.margin>
+            </Text>
+         </children></VBox>
    </children>
 </AnchorPane>

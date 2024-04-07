@@ -17,6 +17,7 @@ import java.sql.SQLException;
 
 public class AfficherDemandeController {
 
+    public Button id_retour;
     @FXML
     private TableView<DemandeFourniture> DemandeFourniture;
     @FXML
@@ -37,6 +38,7 @@ public class AfficherDemandeController {
     public AfficherDemandeController() throws Exception {
     }
 
+
     @FXML
     void retour(ActionEvent event) {
         HelloApplication.sceneConnexion("Prof_acceuil");
@@ -52,25 +54,22 @@ public class AfficherDemandeController {
     }
 
     private void afficherDemandes() throws Exception {
-        try {
-            maConnexion = bdd.getConnection();
-            String query = "SELECT * FROM demandefourniture";
-            PreparedStatement rq = maConnexion.prepareStatement(query);
-           ResultSet rs = rq.executeQuery();
 
-            while (rs.next()) {
-                int id_demande = rs.getInt("id");
-                String raison = rs.getString("raison");
-                String quantite_demande = rs.getString("quantite_demande");
-                String fourniture_demande = rs.getString("fourniture_demande");
-                boolean valide = rs.getBoolean("valide");
+        maConnexion = bdd.getConnection();
+        String query = "SELECT * FROM demandefourniture";
+        PreparedStatement rq = maConnexion.prepareStatement(query);
+        ResultSet rs = rq.executeQuery();
 
-                DemandeFourniture demande = new DemandeFourniture(id_demande, raison, quantite_demande, fourniture_demande, valide);
-                DemandeFourniture.getItems().add(demande);
+        while (rs.next()) {
+            int id_demande = rs.getInt("id");
+            String raison = rs.getString("raison");
+            String quantite_demande = rs.getString("quantite_demande");
+            String fourniture_demande = rs.getString("fourniture_demande");
+            boolean valide = rs.getBoolean("valide");
+
+            DemandeFourniture demande = new DemandeFourniture(id_demande, raison, quantite_demande, fourniture_demande, valide);
+            DemandeFourniture.getItems().add(demande);
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
 

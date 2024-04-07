@@ -41,7 +41,7 @@ public class UtilisateurController {
             else if (result.getString("profil").equals("secretaire")) {
                 HelloApplication.sceneConnexion("Secretaire_acceuil");
             }
-            else if (result.getString("profil").equals("gestionnaireStock")) {
+            else if (result.getString("profil").equals("Gestionnaire de stock")) {
                 HelloApplication.sceneConnexion("GS_acceuil");
             }
 
