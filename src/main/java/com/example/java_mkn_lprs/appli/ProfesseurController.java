@@ -1,8 +1,4 @@
 package com.example.java_mkn_lprs.appli;
-import com.example.java_mkn_lprs.HelloApplication;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 import BDD.bdd;
 import com.example.java_mkn_lprs.HelloApplication;
@@ -23,30 +19,6 @@ import java.sql.Statement;
 public class ProfesseurController {
 
     @FXML
-
-    private Button id_button_prof_menu;
-
-    @FXML
-    private Button id_button_prof_menu1;
-
-    @FXML
-    private Button id_button_fichefourniture;
-
-    @FXML
-    void ask_fourniture(ActionEvent event) {
-        HelloApplication.sceneConnexion("demande_fourniture");
-    }
-
-    @FXML
-    void show_fourniture(ActionEvent event) {
-        HelloApplication.sceneConnexion("show_demande");
-    }
-
-    @FXML
-    void create_fichefourniture(ActionEvent event) {
-        HelloApplication.sceneConnexion("Create_fichefourniture");
-    }
-    
     private TableView<DossierInscription> tableViewDossiers;
 
     @FXML
@@ -79,25 +51,23 @@ public class ProfesseurController {
         ObservableList<DossierInscription> dossierData = FXCollections.observableArrayList();
         String SQL = "SELECT e.id as idFicheEtudiant, e.nom, e.prenom, d.filiere, e.dernier_diplome FROM ficheetudiant e JOIN dossierinscription d ON e.id = d.ref_ficheEtudiant;";
 
-        Connection conn = bdd.getConnection();
+        try (Connection conn = bdd.getConnection();
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(SQL);
+             ResultSet rs = stmt.executeQuery(SQL)) {
 
-
-        while (rs.next()) {
-            FicheEtudiant ficheEtudiant = new FicheEtudiant(
-                    rs.getInt("idFicheEtudiant"),
-                    rs.getString("nom"),
-                    rs.getString("prenom"),
-                    rs.getString("dernier_diplome")
-            );
-
+            while (rs.next()) {
+                FicheEtudiant ficheEtudiant = new FicheEtudiant(
+                        rs.getInt("idFicheEtudiant"),
+                        rs.getString("nom"),
+                        rs.getString("prenom"),
+                        rs.getString("dernier_diplome")
+                );
 
                 DossierInscription dossier = new DossierInscription(ficheEtudiant);
                 dossier.setFiliere(rs.getString("filiere")); // Set other properties as needed
                 dossierData.add(dossier);
+            }
         }
-
 
         colNom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         colPrenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
@@ -115,7 +85,6 @@ public class ProfesseurController {
         } else {
         }
     }
-
 
 
 

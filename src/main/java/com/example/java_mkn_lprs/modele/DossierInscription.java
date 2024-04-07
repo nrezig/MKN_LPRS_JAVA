@@ -1,25 +1,16 @@
 package com.example.java_mkn_lprs.modele;
 
-import java.sql.Time;
-import java.util.Date;
-
 public class DossierInscription {
-    private int idDossier;
-    private Date date;
-    private Time heure;
-    private String filiere;
-    private String motivation;
+
+    private int id;
+
+
 
     private FicheEtudiant ficheEtudiant;
+    private String filiere;
 
+    private String motivation;
 
-    public DossierInscription(int idDossier, Date date, Time heure, String filiere, String motivation) {
-        this.idDossier = idDossier;
-        this.date = date;
-        this.heure = heure;
-        this.filiere = filiere;
-        this.motivation = motivation;
-    }
 
     public DossierInscription(FicheEtudiant ficheEtudiant) {
         this.ficheEtudiant = ficheEtudiant;
@@ -27,67 +18,28 @@ public class DossierInscription {
 
 
 
-    public DossierInscription(String nom, String prenom, String filiere, String dernierDiplome) {
+    // Getters
+
+    public int getId() {
+        return id;
+    }
+    public String getNom() { return ficheEtudiant.getNom(); }
+    public String getPrenom() { return ficheEtudiant.getPrenom(); }
+    public String getDernierDiplome() { return ficheEtudiant.getDernierDiplome(); }
+    public String getEmail() { return ficheEtudiant.getEmail(); }
+    public String getTelephone() { return ficheEtudiant.getTelephone(); }
+    public String getFiliere() { return filiere; }
+
+    public String getMotivation() { return motivation; }
+
+
+    public String getAdresse() {
+        return ficheEtudiant.getAdresse();
     }
 
-    public int getIdDossier() {
-        return idDossier;
-    }
+    // Setters
+    public void setFiliere(String filiere) { this.filiere = filiere; }
+    public void setFicheEtudiant(FicheEtudiant fiche) { this.ficheEtudiant = fiche; }
 
-    public void setIdDossier(int idDossier) {
-        this.idDossier = idDossier;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Time getHeure() {
-        return heure;
-    }
-
-    public void setHeure(Time heure) {
-        this.heure = heure;
-    }
-
-    public String getFiliere() {
-        return filiere;
-    }
-
-    public void setFiliere(String filiere) {
-        this.filiere = filiere;
-    }
-
-    public String getMotivation() {
-        return motivation;
-    }
-
-    public void setMotivation(String motivation) {
-        this.motivation = motivation;
-    }
-
-    public FicheEtudiant getFicheEtudiant() {
-        return ficheEtudiant;
-    }
-
-    public void setFicheEtudiant(FicheEtudiant ficheEtudiant) {
-        this.ficheEtudiant = ficheEtudiant;
-    }
-
-    public String getNom() {
-        return this.ficheEtudiant.getNom();
-    }
-
-    public String getPrenom() {
-        return this.ficheEtudiant.getPrenom();
-    }
-
-    public String getDernierDiplome() {
-        return this.ficheEtudiant.getDernierDiplome();
-    }
 
 }

@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         maStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("MKN_LPRS");
         stage.setScene(scene);
         stage.show();
@@ -50,6 +50,8 @@ public class HelloApplication extends Application {
         window.showAndWait();
     }
 
+
+
     public static void redirectToViewDossiers() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/java_mkn_lprs/ViewDossiers.fxml"));
@@ -67,12 +69,14 @@ public class HelloApplication extends Application {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/java_mkn_lprs/prof.ViewDossiersDetail.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             maStage.setTitle("Détails dossiers d'inscription");
-            maStage.setScene(scene);    
+            maStage.setScene(scene);
             maStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
 
     public static void main(String[] args) {
         launch();
