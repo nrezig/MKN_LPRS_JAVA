@@ -51,10 +51,9 @@ public class UpdateUserController {
             prenomUpUser.setText(utilisateur.getPrenom());
             EmailUpUser.setText(utilisateur.getEmail());
             MdpUpUser.setText(utilisateur.getMdp());
+            String [] items = {"Administrateur", "Professeur", "Secretaire", "Gestionnaire de stock"};
+            Profil.getItems().addAll(items);
         }
-        String [] items = {"Administrateur", "Professeur", "Secretaire", "Gestionnaire de stock"};
-        Profil.getItems().addAll(items);
-
     }
 
 

@@ -25,13 +25,13 @@ public class UtilisateurController {
             alert.setContentText("Connexion réussie !");
             alert.showAndWait();
             if(result.getString("profil").equals("Administrateur")){
-                HelloApplication.sceneConnexion("Admin_acceuil");
+                HelloApplication.sceneConnexion("Admin_accueil");
             }
             else if (result.getString("profil").equals("Professeur")){
                 HelloApplication.sceneConnexion("Prof_acceuil");
             }
             else if (result.getString("profil").equals("Secretaire")) {
-                HelloApplication.sceneConnexion("Secretaire_acceuil");
+                HelloApplication.sceneConnexion("Secretaire_accueil");
             }
             else if (result.getString("profil").equals("Gestionnaire de stock")) {
                 HelloApplication.sceneConnexion("GS_acceuil");

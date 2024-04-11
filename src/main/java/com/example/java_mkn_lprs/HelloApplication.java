@@ -1,9 +1,12 @@
 package com.example.java_mkn_lprs;
 
+import com.example.java_mkn_lprs.appli.ProfesseurController;
+import com.example.java_mkn_lprs.modele.DossierInscription;
 import com.example.java_mkn_lprs.modele.Utilisateur;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -49,9 +52,40 @@ public class HelloApplication extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
+
+    public static void redirectToViewDossiers() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/java_mkn_lprs/ViewDossiers.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            maStage.setTitle("Dossiers d'Inscription");
+            maStage.setScene(scene);
+            maStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void redirectToViewDossiersDetail(DossierInscription dossier) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/java_mkn_lprs/prof.ViewDossiersDetail.fxml"));
+            Parent root = fxmlLoader.load();
+            ProfesseurController controller = fxmlLoader.getController();
+
+            if (controller != null) {
+                controller.voirDetailsDossier(dossier.getId());
+            }
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setTitle("Détails du dossier d'inscription");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void sceneConnexion(String fxml, Object controlleur) {
         maStage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml + ".fxml"));
