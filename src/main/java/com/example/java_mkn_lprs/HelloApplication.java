@@ -1,6 +1,6 @@
 package com.example.java_mkn_lprs;
 
-import com.example.java_mkn_lprs.appli.ProfesseurController;
+import com.example.java_mkn_lprs.appli.DossiersDetailController;
 import com.example.java_mkn_lprs.modele.DossierInscription;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -71,10 +71,10 @@ public class HelloApplication extends Application {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/java_mkn_lprs/prof.ViewDossiersDetail.fxml"));
             Parent root = fxmlLoader.load();
-            ProfesseurController controller = fxmlLoader.getController();
+            DossiersDetailController controller = fxmlLoader.getController();
 
             if (controller != null) {
-                controller.voirDetailsDossier(dossier.getId());
+                controller.setDossier(dossier);
             }
 
             Scene scene = new Scene(root);
@@ -86,12 +86,6 @@ public class HelloApplication extends Application {
             e.printStackTrace();
         }
     }
-
-
-
-
-
-
     public static void main(String[] args) {
         launch();
     }

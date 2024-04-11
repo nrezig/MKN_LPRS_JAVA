@@ -12,10 +12,11 @@ public class DossierInscription {
     private String motivation;
 
 
-    public DossierInscription(FicheEtudiant ficheEtudiant) {
-        this.ficheEtudiant = ficheEtudiant;
+    public DossierInscription(int id, String nom, String prenom, String filiere, String dernierDiplome, String email, String telephone, String adresse) {
+        this.id = id;
+        this.filiere = filiere;
+        this.ficheEtudiant = new FicheEtudiant(id, nom, prenom, dernierDiplome, email, telephone, adresse);
     }
-
 
 
     // Getters
