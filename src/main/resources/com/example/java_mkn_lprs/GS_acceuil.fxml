@@ -12,7 +12,7 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Button fx:id="id_button_GS" layoutX="185.0" layoutY="141.0" mnemonicParsing="false" onAction="#show_fourniture" prefHeight="58.0" prefWidth="227.0" text="Consulter les Demandes">
+      <Button fx:id="id_button_GS" layoutX="185.0" layoutY="141.0" mnemonicParsing="false" onAction="#show_fournituregs" prefHeight="58.0" prefWidth="227.0" text="Consulter les Demandes">
          <font>
             <Font size="18.0" />
          </font>

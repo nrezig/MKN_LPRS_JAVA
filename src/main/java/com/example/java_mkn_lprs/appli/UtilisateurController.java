@@ -35,13 +35,13 @@ public class UtilisateurController {
             if(result.getString("profil").equals("Admin")){
                 HelloApplication.sceneConnexion("Admin_acceuil");
             }
-            else if (result.getString("profil").equals("professeur")){
+            else if (result.getString("profil").equals("Professeur")){
                 HelloApplication.sceneConnexion("Prof_acceuil");
             }
             else if (result.getString("profil").equals("secretaire")) {
                 HelloApplication.sceneConnexion("Secretaire_acceuil");
             }
-            else if (result.getString("profil").equals("gestionnaireStock")) {
+            else if (result.getString("profil").equals("Gestionnaire de stock")) {
                 HelloApplication.sceneConnexion("GS_acceuil");
             }
 

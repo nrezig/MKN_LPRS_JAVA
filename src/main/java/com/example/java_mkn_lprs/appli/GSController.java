@@ -8,9 +8,9 @@ import javafx.scene.control.Button;
 public class GSController {
 
     public Button id_button_GS;
-    
+
     @FXML
-    void show_fourniture(ActionEvent event) {
+    void show_fournituregs(ActionEvent event) {
         HelloApplication.sceneConnexion("show_demande_gs");
     }
 }
