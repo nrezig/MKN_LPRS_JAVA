@@ -1,6 +1,8 @@
 package com.example.java_mkn_lprs.modele;
 
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 
 public class Utilisateur {
     private static int id;
@@ -10,6 +12,11 @@ public class Utilisateur {
     private String email;
     private String mdp;
     private String profil;
+
+    @FXML
+
+    private Label labelBienvenue;
+
 
     public static int getId() {
         return id;

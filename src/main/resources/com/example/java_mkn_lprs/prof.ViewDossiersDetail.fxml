@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFBA08;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.java_mkn_lprs.appli.DossiersDetailController">
+        <VBox fx:id="sidebar" alignment="TOP_CENTER" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #3F88C5; -fx-background-radius: 0 30 30 0; -fx-padding: 20;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label fx:id="labelBienvenue" style="-fx-text-fill: white; -fx-font-size: 24px;" text="Bienvenue," />
+            <Separator style="-fx-background-color: white;" />
+        </VBox>
+
+    <VBox fx:id="contentArea" layoutX="200.0" style="-fx-background-color: white; -fx-padding: 20;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dossier de: " wrappingWidth="61.6875" />
+        <Label fx:id="labelNomPrenom" layoutX="20.0" layoutY="20.0" text="Label" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Souhait: " wrappingWidth="197.58984375" />
+        <Label fx:id="labelFiliere" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dernier diplôme obtenu: " wrappingWidth="254.58984375" />
+        <Label fx:id="labelDernierDiplome" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contact" wrappingWidth="181.58984375" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mail: " wrappingWidth="181.58984375" />
+        <Label fx:id="labelEmail" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone: " wrappingWidth="181.58984375" />
+        <Label fx:id="labelTelephone" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Motivation: " wrappingWidth="181.58984375" />
+        <Label fx:id="labelMotivation" />
+      <Button fx:id="renderVous" mnemonicParsing="false" onAction="#onClickRenderVous" text="Rendez-vous" />
+    </VBox>
+
+
+
+</AnchorPane>

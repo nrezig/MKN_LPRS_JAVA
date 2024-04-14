@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class UtilisateurController {
+
     public Utilisateur connexion (String email, String mdp ) throws Exception {
         Connection maConnexion = bdd.getConnection();
         Utilisateur unUser = new Utilisateur();
