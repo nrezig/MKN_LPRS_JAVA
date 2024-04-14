@@ -33,8 +33,22 @@ public class DemandeFournitureController {
     private Button validerbouton;
 
     @FXML
-    void retour(ActionEvent event) {
-        HelloApplication.sceneConnexion("Prof_acceuil");
+    public void ask_fourniture(javafx.event.ActionEvent actionEvent) {
+        HelloApplication.sceneConnexion("demande_fourniture");
+    }
+
+    @FXML
+    public void show_fourniture(javafx.event.ActionEvent actionEvent) {
+        HelloApplication.sceneConnexion("show_demande");
+    }
+
+    @FXML
+    private void voirDossiers() {
+        try {
+            HelloApplication.redirectToViewDossiers();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public DemandeFournitureController() throws Exception {

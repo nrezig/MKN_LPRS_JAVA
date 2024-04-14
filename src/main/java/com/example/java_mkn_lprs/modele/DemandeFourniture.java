@@ -2,6 +2,7 @@ package com.example.java_mkn_lprs.modele;
 
 public class DemandeFourniture {
     private int id;
+    private static int dm;
     private String raison;
     private String quantite_demande;
     private String fourniture_demande;
@@ -52,5 +53,10 @@ public class DemandeFourniture {
         this.fourniture_demande = fourniture_demande;
         this.raison = raison;
         this.valide = valide;
+        dm = id;
+    }
+
+    public static int getdm() {
+        return dm;
     }
 }

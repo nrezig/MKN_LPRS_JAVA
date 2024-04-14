@@ -1,10 +1,10 @@
 package com.example.java_mkn_lprs.modele;
 
-import com.example.java_mkn_lprs.appli.DossierInscriptionController;
-
 public class DossierInscription {
-    private static int dossier;
+
     private int id;
+
+    private static int dossier;
 
     private FicheEtudiant ficheEtudiant;
     private String filiere;
@@ -16,7 +16,7 @@ public class DossierInscription {
         this.id = id;
         this.filiere = filiere;
         this.ficheEtudiant = new FicheEtudiant(id, nom, prenom, dernierDiplome, email, telephone, adresse);
-        dossier=id;
+        dossier = id;
     }
 
 
@@ -46,5 +46,6 @@ public class DossierInscription {
     // Setters
     public void setFiliere(String filiere) { this.filiere = filiere; }
     public void setFicheEtudiant(FicheEtudiant fiche) { this.ficheEtudiant = fiche; }
+
 
 }

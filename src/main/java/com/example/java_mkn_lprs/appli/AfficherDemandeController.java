@@ -1,12 +1,12 @@
 package com.example.java_mkn_lprs.appli;
 
 import com.example.java_mkn_lprs.HelloApplication;
+import com.example.java_mkn_lprs.modele.DemandeFourniture;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import com.example.java_mkn_lprs.modele.DemandeFourniture;
 import BDD.bdd;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -40,8 +40,22 @@ public class AfficherDemandeController {
 
 
     @FXML
-    void retour(ActionEvent event) {
-        HelloApplication.sceneConnexion("Prof_acceuil");
+    public void ask_fourniture(javafx.event.ActionEvent actionEvent) {
+        HelloApplication.sceneConnexion("demande_fourniture");
+    }
+
+    @FXML
+    public void show_fourniture(javafx.event.ActionEvent actionEvent) {
+        HelloApplication.sceneConnexion("show_demande");
+    }
+
+    @FXML
+    private void voirDossiers() {
+        try {
+            HelloApplication.redirectToViewDossiers();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -54,7 +68,6 @@ public class AfficherDemandeController {
     }
 
     private void afficherDemandes() throws Exception {
-
         maConnexion = bdd.getConnection();
         String query = "SELECT * FROM demandefourniture";
         PreparedStatement rq = maConnexion.prepareStatement(query);

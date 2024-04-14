@@ -13,4 +13,9 @@ public class GSController {
     void show_fournituregs(ActionEvent event) {
         HelloApplication.sceneConnexion("show_demande_gs");
     }
+
+    @FXML
+    public void create_fichefourniture(ActionEvent event) {
+        HelloApplication.sceneConnexion("Create_fichefourniture");
+    }
 }

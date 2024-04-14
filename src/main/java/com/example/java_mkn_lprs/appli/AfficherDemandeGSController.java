@@ -2,6 +2,7 @@ package com.example.java_mkn_lprs.appli;
 
 // Import des classes nécessaires
 import BDD.bdd;
+import com.example.java_mkn_lprs.HelloApplication;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -38,6 +39,16 @@ public class AfficherDemandeGSController {
     private DemandeFourniture selectitems; // Sélection d'un élément dans la TableView
     @FXML
     private TableView<DemandeFourniture> DemandeFourniture; // TableView pour afficher les demandes
+
+    @FXML
+    void show_fournituregs(ActionEvent event) {
+        HelloApplication.sceneConnexion("show_demande_gs");
+    }
+
+    @FXML
+    public void create_fichefourniture(ActionEvent event) {
+        HelloApplication.sceneConnexion("Create_fichefourniture");
+    }
 
     // Méthode d'initialisation appelée lorsque le contrôleur est chargé
     @FXML

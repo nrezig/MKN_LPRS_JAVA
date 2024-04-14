@@ -15,7 +15,6 @@
       <Separator style="-fx-background-color: white;" />
       <Button fx:id="id_button_prof_menu" onAction="#ask_fourniture" style="-fx-background-color: #3F88C5; -fx-text-fill: white; -fx-background-radius: 0;" text="Demande de Fourniture" />
       <Button fx:id="id_button_prof_menu1" onAction="#show_fourniture" style="-fx-background-color: #3F88C5; -fx-text-fill: white; -fx-background-radius: 0;" text="Consulter ses demandes" />
-      <Button fx:id="id_button_fichefourniture" onAction="#create_fichefourniture" style="-fx-background-color: #3F88C5; -fx-text-fill: white; -fx-background-radius: 0;" text="Créer une fiche fourniture" />
       <Button fx:id="id_button_voirDossiers" onAction="#voirDossiers" style="-fx-background-color: #3F88C5; -fx-text-fill: white; -fx-background-radius: 0;" text="Consulter les Dossiers" />
    </VBox>
    <VBox fx:id="contentArea" style="-fx-background-color: white; -fx-padding: 20;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
