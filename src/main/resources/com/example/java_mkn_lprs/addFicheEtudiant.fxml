@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="740.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.java_mkn_lprs.appli.AddFichEtudController">
+   <children>
+      <Label alignment="CENTER" layoutX="151.0" layoutY="38.0" prefHeight="36.0" prefWidth="357.0" text="Nouvelle Fiche Etudiant">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="236.0" layoutY="111.0" prefHeight="28.0" prefWidth="148.0" text="Nom ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nomFiche" layoutX="184.0" layoutY="154.0" prefHeight="31.0" prefWidth="253.0" />
+      <Label alignment="CENTER" layoutX="231.0" layoutY="199.0" prefHeight="31.0" prefWidth="148.0" text="Prénom">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="prenomFiche" layoutX="184.0" layoutY="238.0" prefHeight="31.0" prefWidth="253.0" />
+      <Label alignment="CENTER" layoutX="231.0" layoutY="281.0" prefHeight="31.0" prefWidth="148.0" text="Email">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="EmailFiche" layoutX="184.0" layoutY="322.0" prefHeight="31.0" prefWidth="253.0" />
+      <Label alignment="CENTER" layoutX="236.0" layoutY="367.0" prefHeight="31.0" prefWidth="148.0" text="Telephone">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TelFiche" layoutX="184.0" layoutY="404.0" prefHeight="31.0" prefWidth="253.0" />
+      <Label alignment="CENTER" layoutX="237.0" layoutY="450.0" prefHeight="31.0" prefWidth="148.0" text="Adresse">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="AdresseFiche" layoutX="185.0" layoutY="490.0" prefHeight="31.0" prefWidth="253.0" />
+      <Label alignment="CENTER" layoutX="238.0" layoutY="538.0" prefHeight="31.0" prefWidth="148.0" text="Dernier Diplôme">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="DiplomeFiche" layoutX="187.0" layoutY="580.0" prefHeight="31.0" prefWidth="253.0" />
+      <Button layoutX="264.0" layoutY="642.0" mnemonicParsing="false" onAction="#AddFicheEtudiant" prefHeight="31.0" prefWidth="100.0" text="Valider">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

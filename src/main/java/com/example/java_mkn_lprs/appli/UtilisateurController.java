@@ -18,7 +18,10 @@ public class UtilisateurController {
         ResultSet result = login.executeQuery();
 
         if (result.next()){
-            Utilisateur unUser = new Utilisateur(result.getInt("id"), result.getString("nom"), result.getString("prenom"),result.getString("email"), result.getString("password"), result.getString("profil"));
+            Utilisateur unUser = new Utilisateur(result.getInt("id"), result.getString("nom"), result.getString("prenom"),
+                    result.getString("email"), result.getString("password"), result.getString("profil"));
+            Utilisateur.setUtilisateurConnecteId(unUser.getId());
+
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Succés !");

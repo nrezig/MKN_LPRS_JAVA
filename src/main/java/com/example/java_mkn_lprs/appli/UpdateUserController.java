@@ -42,7 +42,7 @@ public class UpdateUserController {
 
 
     public void initialize()throws Exception{
-        ObservableList<Utilisateur> userSelectedData = HelloApplication.getUserSelectedData();
+        ObservableList<Utilisateur> userSelectedData = Utilisateur.getUserSelectedData();
 
 
         if (!userSelectedData.isEmpty()) {
@@ -61,7 +61,7 @@ public class UpdateUserController {
     @FXML
     void UpdateUser(ActionEvent event) throws SQLException {
         String data = Profil.getSelectionModel().getSelectedItem();
-        int selectedUserId = HelloApplication.getSelectedUserId();
+        int selectedUserId = Utilisateur.getSelectedUserId();
         PreparedStatement update = maConnexion.prepareStatement("UPDATE users SET nom = ?, prenom = ?, email = ?, password = ?, profil = ? WHERE id = ?");
         update.setString(1, nomUpUser.getText());
         update.setString(2, prenomUpUser.getText());
@@ -69,14 +69,13 @@ public class UpdateUserController {
         update.setString(4, MdpUpUser.getText());
         update.setString(5, data);
         update.setInt(6, selectedUserId);
-        System.out.println(selectedUserId);
         update.executeUpdate();
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Ajout !");
+        alert.setTitle("Modification !");
         alert.setContentText("L'utilisateur "+ nomUpUser.getText() +" "+ prenomUpUser.getText() +" a été modifié avec succés ! Actualisé pour voir les changements !");
         alert.showAndWait();
 
-        HelloApplication.sceneConnexion("Admin_acceuil");
+        HelloApplication.sceneConnexion("UserList");
     }
 }

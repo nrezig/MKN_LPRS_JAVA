@@ -32,8 +32,7 @@ public class AddUserController {
     @FXML
     private ComboBox<String> Profil;
 
-    @FXML
-    private Label selection;
+
 
 
 
@@ -43,7 +42,7 @@ public class AddUserController {
     }
 
     public void initialize(){
-        String [] items = {"Administrateur","Professeur", "Secretaire", "Gestionnaire de Stock"};
+        String [] items = {"Administrateur","Professeur", "Secretaire", "Gestionnaire de stock"};
         Profil.getItems().addAll(items);
 
     }
@@ -75,7 +74,7 @@ public class AddUserController {
         alert.setContentText("L'utilisateur "+ nomNewUser.getText() +" "+ prenomNewUser.getText() +" a été créee avec succés ! Actualisé pour voir les changements !");
         alert.showAndWait();
 
-        HelloApplication.sceneConnexion("Admin_acceuil");
+        HelloApplication.sceneConnexion("UserList");
     }
 
     @FXML

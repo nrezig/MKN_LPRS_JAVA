@@ -1,4 +1,5 @@
 package com.example.java_mkn_lprs.modele;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -21,6 +22,35 @@ public class Utilisateur {
         this.profil = profil;
 
     }
+    public Utilisateur(){
+
+    }
+    private static ObservableList<Utilisateur> userSelectedData;
+    public static void setUserSelectedData(ObservableList<Utilisateur> data) {
+        userSelectedData = data;
+    }
+    public static ObservableList<Utilisateur> getUserSelectedData() {
+        return userSelectedData;
+    }
+    private static int selectedUserId;
+    public static int getSelectedUserId() {
+        return selectedUserId;
+    }
+
+    public static void setSelectedUserId(int userId) {
+        selectedUserId = userId;
+    }
+    private static int utilisateurConnecteId;
+
+    public static void setUtilisateurConnecteId(int id) {
+        utilisateurConnecteId = id;
+    }
+
+    public static int getUtilisateurConnecteId() {
+        return utilisateurConnecteId;
+    }
+
+
 
 
 

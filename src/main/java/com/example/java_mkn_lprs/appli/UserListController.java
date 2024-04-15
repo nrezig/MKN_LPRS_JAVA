@@ -67,7 +67,6 @@ public class UserListController {
         while(rs.next()) {
             data.add(new Utilisateur(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getString("password"), rs.getString("profil")));
         }
-        System.out.println(data.get(1).getId());
         userData.addAll(data);
         id_user.setCellValueFactory(new PropertyValueFactory<Utilisateur, Integer>("id"));
         nom.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("nom"));
@@ -112,10 +111,10 @@ public class UserListController {
         ObservableList<Utilisateur> userselected;
         userselected = UserList.getSelectionModel().getSelectedItems();
         if (!userselected.isEmpty()) {
-            HelloApplication.setUserSelectedData(userselected);
+            Utilisateur.setUserSelectedData(userselected);
             int selectedUserId = userselected.get(0).getId();
-            HelloApplication.setSelectedUserId(selectedUserId);
-            HelloApplication.setUserSelectedData(userselected);
+            Utilisateur.setSelectedUserId(selectedUserId);
+            Utilisateur.setUserSelectedData(userselected);
             HelloApplication.sceneConnexion("updateUser");
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
