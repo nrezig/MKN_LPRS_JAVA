@@ -1,6 +1,7 @@
 package com.example.java_mkn_lprs;
 
 import com.example.java_mkn_lprs.appli.DossiersDetailController;
+import com.example.java_mkn_lprs.appli.ProfesseurController;
 import com.example.java_mkn_lprs.modele.DossierInscription;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,13 +14,11 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     private static Stage maStage;
 
-
-
     @Override
     public void start(Stage stage) throws IOException {
         maStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 400, 230);
         stage.setTitle("MKN_LPRS");
         stage.setScene(scene);
         stage.show();
@@ -86,6 +85,7 @@ public class HelloApplication extends Application {
             e.printStackTrace();
         }
     }
+
     public static void main(String[] args) {
         launch();
     }

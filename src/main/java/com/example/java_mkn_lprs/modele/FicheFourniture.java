@@ -6,6 +6,10 @@ public class FicheFourniture {
     private String description;
     private String quantite;
 
+    public FicheFourniture() {
+
+    }
+
     public int getId_fichefourniture() {
         return id_fichefourniture;
     }
@@ -43,5 +47,11 @@ public class FicheFourniture {
         this.description = description;
         this.quantite = quantite;
     }
-
+    public static FicheFourniture createFromTextFieldValues(String libelle, String description, String quantite){
+            FicheFourniture fiche = new FicheFourniture();
+            fiche.setLibelle(libelle);
+            fiche.setDescription(description);
+            fiche.setQuantite(quantite);
+            return fiche;
+    }
 }

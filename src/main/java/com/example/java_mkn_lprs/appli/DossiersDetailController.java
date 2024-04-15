@@ -1,12 +1,16 @@
 package com.example.java_mkn_lprs.appli;
 
+import com.example.java_mkn_lprs.HelloApplication;
 import com.example.java_mkn_lprs.modele.DossierInscription;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class DossiersDetailController {
+
     @FXML
     private Label labelNomPrenom, labelFiliere, labelDernierDiplome, labelEmail, labelTelephone, labelAdresse, labelMotivation;
+
     private int selectedDossierId;
 
     public void setDossier(DossierInscription dossier) {
@@ -19,6 +23,10 @@ public class DossiersDetailController {
     }
 
 
+    public void onClickRenderVous(ActionEvent actionEvent) {
+        HelloApplication helloApplication = new HelloApplication();
+        helloApplication.sceneConnexion("rendezVous");
     }
+}
 
 
