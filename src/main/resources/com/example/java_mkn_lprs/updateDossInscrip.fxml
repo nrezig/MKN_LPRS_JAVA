@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="631.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.java_mkn_lprs.appli.UpdateDossInscription">
+   <children>
+      <Label alignment="CENTER" layoutX="132.0" layoutY="61.0" prefHeight="36.0" prefWidth="366.0" text="Modification Dossier Inscription">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="236.0" layoutY="127.0" prefHeight="28.0" prefWidth="148.0" text="Date">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="UpDate" layoutX="184.0" layoutY="168.0" prefHeight="28.0" prefWidth="253.0" />
+      <Label alignment="CENTER" layoutX="236.0" layoutY="223.0" prefHeight="28.0" prefWidth="148.0" text="Heure">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="UpHeure" layoutX="184.0" layoutY="264.0" prefHeight="31.0" prefWidth="253.0" />
+      <Label alignment="CENTER" layoutX="236.0" layoutY="321.0" prefHeight="31.0" prefWidth="148.0" text="Fillière">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="UpFilliere" layoutX="184.0" layoutY="372.0" prefHeight="31.0" prefWidth="253.0" />
+      <Label alignment="CENTER" layoutX="236.0" layoutY="429.0" prefHeight="31.0" prefWidth="148.0" text="Motivation">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="UpMotivation" layoutX="145.0" layoutY="478.0" prefHeight="63.0" prefWidth="331.0" />
+      <Button layoutX="260.0" layoutY="566.0" mnemonicParsing="false" onAction="#UpDossInscription" prefHeight="31.0" prefWidth="100.0" text="Valider">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="631.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.java_mkn_lprs.appli.AddDossInscriptionController">
    <children>
       <Label alignment="CENTER" layoutX="122.0" layoutY="51.0" prefHeight="36.0" prefWidth="357.0" text="Nouveau Dossier Inscription">
@@ -35,14 +34,14 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="Filliere" layoutX="174.0" layoutY="353.0" prefHeight="31.0" prefWidth="253.0" />
+      <TextField fx:id="Filliere" layoutX="174.0" layoutY="362.0" prefHeight="31.0" prefWidth="253.0" />
       <Label alignment="CENTER" layoutX="226.0" layoutY="419.0" prefHeight="31.0" prefWidth="148.0" text="Motivation">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <TextArea fx:id="Motivation" layoutX="135.0" layoutY="468.0" prefHeight="63.0" prefWidth="331.0" />
-      <Button layoutX="250.0" layoutY="556.0" mnemonicParsing="false" onAction="#AddDossInscription" prefHeight="31.0" prefWidth="100.0" text="Valider">
+      <Button fx:id="UpDossier" layoutX="250.0" layoutY="556.0" mnemonicParsing="false" onAction="#AddDossInscription" prefHeight="31.0" prefWidth="100.0" text="Valider">
          <font>
             <Font size="18.0" />
          </font>

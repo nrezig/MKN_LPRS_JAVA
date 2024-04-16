@@ -3,10 +3,9 @@ package com.example.java_mkn_lprs.appli;
 import BDD.bdd;
 import com.example.java_mkn_lprs.HelloApplication;
 import com.example.java_mkn_lprs.modele.FicheFourniture;
-import com.gluonhq.charm.glisten.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
+import javafx.scene.control.TextField;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

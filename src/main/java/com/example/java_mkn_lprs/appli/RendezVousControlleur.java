@@ -63,7 +63,7 @@ public class RendezVousControlleur {
                 PreparedStatement rq = bdd.getConnection().prepareStatement("INSERT INTO rendezvous(date_rendez_vous, ref_dossierInscription, ref_professeur, ref_salle) VALUES (?,?,?,(SELECT id FROM salle WHERE numero=?))");
                 rq.setString(1, date);
                 rq.setInt(2, DossierInscription.getDossier());
-                rq.setInt(3, Utilisateur.getId());
+                rq.setInt(3, Utilisateur.getUtilisateurConnecteId());
                 rq.setInt(4, Integer.parseInt(salle));
                 int rs = rq.executeUpdate();
                 message.setText("Le rendez-vous a bien été planifié");

@@ -136,9 +136,13 @@ public class FicheEtudiantController {
         ObservableList<FicheEtudiant> ficheselected;
         ficheselected = FicheEtudiantList.getSelectionModel().getSelectedItems();
         if(ficheselected.size()>0){
-            PreparedStatement deleteListe = maConnexion.prepareStatement("DELETE FROM ficheetudiant WHERE id = ?");
-            deleteListe.setInt(1, ficheselected.get(0).getId_fiche());
-            deleteListe.executeUpdate();
+            PreparedStatement deleteDossier = maConnexion.prepareStatement("DELETE FROM dossierinscription WHERE ref_ficheEtudiant = ?");
+            deleteDossier.setInt(1, ficheselected.get(0).getId_fiche());
+            deleteDossier.executeUpdate();
+
+            PreparedStatement deleteFiche = maConnexion.prepareStatement("DELETE FROM ficheetudiant WHERE id = ?");
+            deleteFiche.setInt(1, ficheselected.get(0).getId_fiche());
+            deleteFiche.executeUpdate();
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Suppresion !");
